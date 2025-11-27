@@ -1,4 +1,6 @@
+import {range} from "./util"
 function StarRating({ rating }) {
+  const numbers = range(0, rating);
   /*
     Here's the markup for a single star:
 
@@ -16,12 +18,19 @@ function StarRating({ rating }) {
 
   return (
     <div className="star-wrapper">
-      <img
+      {/* <img
         key={crypto.randomUUID()}
         alt=""
         className="gold-star"
         src="/star.svg"
-      />
+      /> */}
+
+      {numbers.map(number => (<img
+      alt=""
+      className="gold-star"
+      // src="https://sandpack-bundler.vercel.app/img/gold-star.svg"
+      src="/star.svg"
+    />))}
     </div>
   )
 }
